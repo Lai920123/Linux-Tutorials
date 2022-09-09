@@ -39,3 +39,10 @@ cd vmware-host-modules
 git checkout workstation-16.2.3
 sudo make ; sudo make install
 ```
+## 將OVA轉換為OVF ##
+
+```bash
+ovftool test.ova test.ovf
+```
+## 解除安裝 ##
+sudo vwmare-installer -u vmware-workstation
