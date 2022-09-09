@@ -45,4 +45,6 @@ sudo make ; sudo make install
 ovftool test.ova test.ovf
 ```
 ## 解除安裝 ##
+```bash
 sudo vwmare-installer -u vmware-workstation
+```
