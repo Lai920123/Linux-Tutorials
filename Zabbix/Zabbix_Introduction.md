@@ -11,3 +11,7 @@ Zabbix是一個分散式開源監控方案，能夠監視伺服器網路的穩�
 ### Zabbix Proxy ###
 
 ### Zabbix Agent ###
+
+## 安裝 ##
+
+因Zabbix不同版本安裝方式差異較大，請遵照官網安裝方式安裝，前往官網 https://www.zabbix.com/download
