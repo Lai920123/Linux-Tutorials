@@ -90,7 +90,6 @@ show grant for 'test'@'localhost';
 revoke all privileges, grant option from 'test'@'localhost';
 #移除帳號
 drop user 'test'@'localhost';
-
 ```
 
 ### 資料庫管理 ###
