@@ -35,18 +35,19 @@ dnf update
 dnf -y install mysql-server
 ```
 
-- 常用指令
-
-### 登入MySQL ###
+## 登入MySQL ##
 
 ```bash
 #登入本地電腦
-mysql -u root -p
+mysql -D test_db -u root -p 
+-D 指定資料庫
+-u 指定使用者
+-p 密碼
 #登入遠端電腦，參數可不必空格
-mysql -h 123.0.1.1 -u root -p P@ssw0rd 
+mysql -D test_db -h 123.0.1.1 -u root -p P@ssw0rd 
 ```
 
-## 修改密碼方式##
+## 修改密碼方式 ##
 
 直接修改
 
@@ -58,65 +59,10 @@ mysqladmin -u user -p password <新密碼>
 使用mysql_secure_installation
 
 ```bash
-[root@Server ~]# mysql_secure_installation 
-
-Securing the MySQL server deployment.
-
-Enter password for user root: 
-The 'validate_password' component is installed on the server.
-The subsequent steps will run with the existing configuration
-of the component.
-Using existing password for root.
-
-Estimated strength of the password: 100 
-Change the password for root ? ((Press y|Y for Yes, any other key for No) : yes
-
-New password: 
-
-Re-enter new password: 
-
-Estimated strength of the password: 100 
-Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : yes
-By default, a MySQL installation has an anonymous user,
-allowing anyone to log into MySQL without having to have
-a user account created for them. This is intended only for
-testing, and to make the installation go a bit smoother.
-You should remove them before moving into a production
-environment.
-
-Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
-Success.
-
-
-Normally, root should only be allowed to connect from
-'localhost'. This ensures that someone cannot guess at
-the root password from the network.
-
-Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
-Success.
-
-By default, MySQL comes with a database named 'test' that
-anyone can access. This is also intended only for testing,
-and should be removed before moving into a production
-environment.
-
-
-Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
- - Dropping test database...
-Success.
-
- - Removing privileges on test database...
-Success.
-
-Reloading the privilege tables will ensure that all changes
-made so far will take effect immediately.
-
-Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
-Success.
-
-All done! 
-
+#輸入後按照步驟填入對應訊息即可
+mysql_secure_installation 
 ```
+## 基本操作 ## 
 
 ### 顯示狀態 ###
 
@@ -125,6 +71,26 @@ All done!
 status
 #顯示版本
 select version()
+#查看port號
+show global variables like 'port';
+```
+
+### 使用者管理 ### 
+
+```bash
+#創建帳號test,密碼為P@ssw0rd
+create user 'test'@'localhost' identified by 'P@ssw0rd';
+#授予所有權限於test_db 
+grant all privileges on test_db.* to 'test'@'localhost';
+#查看使用者
+select user,host from mysql.user;
+#查看使用者權限
+show grant for 'test'@'localhost';
+#移除使用者權限
+revoke all privileges, grant option from 'test'@'localhost';
+#移除帳號
+drop user 'test'@'localhost';
+
 ```
 
 ### 資料庫管理 ###
@@ -134,10 +100,10 @@ select version()
 show databases;
 #創建名為test_db的資料庫，字符編碼為gbk
 create database test_db character set gbk; 
-#刪除名為test_db的資料庫
-drop database test_db;
 #選擇指定的資料庫
 use test_db;
+#刪除名為test_db的資料庫
+drop database test_db;
 ```
 
 ### 資料表管理 ###
@@ -149,8 +115,8 @@ show tables;
 describe <資料表名稱>
 #創建資料表
 create table user_account (
-username char(100),
-password text
+    username char(100),
+    password text
 );
 #刪除資料表
 drop tables user_account;
