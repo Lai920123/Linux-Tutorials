@@ -1,5 +1,0 @@
-# Share-Folder
-
-[NFS](Share-Folder%20267af2b9cdb14e5ca3d12f37fabb0777/NFS%20f3825b3de9d04603a59e098244ed5864.md)
-
-[SAMBA](Share-Folder%20267af2b9cdb14e5ca3d12f37fabb0777/SAMBA%20a8d815a3a14642078b58179ea858d9e5.md)
