@@ -135,7 +135,7 @@ netplan apply
 #新增設定檔於NetworkManager
 sudo touch /etc/NetworkManager/conf.d/01-network-manager-all.conf
 #重新載入服務
-systemctl reload NetworkManager
+systemctl reload NetworkManager`
 #接著就可以使用NetworkManager進行配置了
 nmcli connection #查看網卡
 nmcli connection modify ens33 ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8 ipv4.method manual 
