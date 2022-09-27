@@ -125,13 +125,17 @@ netplan apply
 sudo apt -y install network-manager
 ```
 
-
+### 替換為NetworkManager ###
 ```bash
 #要使用NetworkManager，須先進行以下設定
 #使用vim編輯
 sudo vim /etc/netplan/test.yaml #test.yaml為原本網路的設定檔，請依照實際檔名進行更改
 #開啟之後將內容全部刪除，並套用
 netplan apply 
+#新增設定檔於NetworkManager
+sudo touch /etc/NetworkManager/conf.d/01-network-manager-all.conf
+#重新載入服務
+systemctl reload NetworkManager
 #接著就可以使用NetworkManager進行配置了
 nmcli connection #查看網卡
 nmcli connection modify ens33 ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8 ipv4.method manual 
