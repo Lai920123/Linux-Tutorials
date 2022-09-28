@@ -141,6 +141,18 @@ nmcli connection #查看網卡
 nmcli connection modify ens33 ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8 ipv4.method manual 
 ```
 
+### 管理vmnet ###
+
+```bash
+#使用nmcli查看vmnet，可以看到顯示unmanaged 
+nmcli
+#開啟介面管理
+nmcli dev set vmnet2 managed yes
+#配置IP
+nmcli connection modify vmnet2 ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.254 ipv4.dns 8.8.8.8 ipv4.method manual
+
+```
+
 ## CentOS
 
 CentOS有多種方式可以進行網路的配置
