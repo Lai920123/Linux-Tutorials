@@ -230,3 +230,16 @@ knock 123.0.1.1 9000 8000 7000
 ```
         
 ## Fail2Ban ##
+
+
+## ssh_config ##
+
+    若是要一次連結多台做為跳板，可以編輯ssh_config
+   
+```bash
+Host Host1 #別名
+    Hostname 192.168.1.100 #連線主機
+    User user #使用者名稱
+    Port 22 #端口
+    LocalForward 8080 192.168.1.1:80 #SSH Tunnel，命令行的話使用-L
+```
