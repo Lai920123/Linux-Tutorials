@@ -22,6 +22,12 @@ dynamic_chain
 socks5 127.0.0.1 9050
 ```
 
+## 啟用Tor ##
+
+```bash
+systemctl start tor 
+```
+
 ## 使用方法 ##
 
 ```bash
