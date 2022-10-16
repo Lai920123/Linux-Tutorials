@@ -125,6 +125,98 @@ alter table <資料表名稱> change column <原欄位名稱> <要修改的欄�
 alter table <資料表名稱> add column <欄位名稱> <資料型態>;
 #刪除資料表欄位
 alter table <資料表名稱> drop column <欄位名稱>;
+# Table #
+
+## 創建表格 ##
+
+```sql
+create table Account (
+    -- id,整數,值不能為空,自動增加
+    id int not null auto_increment, 
+    -- 帳號,字元,值不能為空
+    username char(20) not null,
+    -- 密碼,值不能為空
+    password varbinary(MAX) not null,
+    -- 主鍵為id，唯一值，防止資料重複
+    primary key (id)
+);
+```
+
+## 查看表格 ##
+
+```sql
+show tables;
+describe Account;
+```
+
+## 刪除表格 ##
+
+```sql
+drop table Account;
+```
+
+## 新增Row(水平列) ##
+
+```sql
+alter table Account add username char(20) not null;
+```
+
+## 刪除Row(水平列) ##
+
+```sql
+alter table Account drop column username;
+```
+
+## 插入值 ##
+
+```sql
+insert into Account (username,password) values ('user1','Skills39')
+```
+
+## 將搜尋出的資料插入表格 ##
+
+```sql
+insert into Account (user,password) select user,password from Account1;
+```
+
+## 將表格的內容插入新的表格中 ##
+
+```sql
+create table Account1 as select * from Account;
+```
+
+## 查詢列 ##
+
+```sql
+select * from Account; -- 輸出全部列
+select username,password from Account; -- 指定輸出列
+```
+
+## 修改值 ##
+
+
+```sql
+update Account set user='user10' where id=10; --將user列id為10的值更改為user10
+```
+
+## 刪除值 ##
+
+```sql
+delete from Account where id=10; --將id為10的的值刪除
+```
+
+## 清空表格 ##
+
+```sql
+truncate table Account;
+```
+
+## 限制返回行數 ##
+
+```sql
+select * from Account 3; --返回前三行
+select * from Account 2,5; --由3開始返回五行
+select * from Account 1,6; --由2開始返回6行
 
 ```
 ## TroubleShooting ##
