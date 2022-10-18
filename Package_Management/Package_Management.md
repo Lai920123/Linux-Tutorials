@@ -123,3 +123,5 @@ apt autoclean #清除過期的DEB軟體包
 https://www.debian.org/doc/manuals/debian-reference/ch02.zh-cn.html#_debian_package_management_prerequisites
 
 https://www.arthurtoday.com/2010/02/apt-dpkg.html
+
+https://newtoypia.blogspot.com/2013/12/gnupg-pgp.html
