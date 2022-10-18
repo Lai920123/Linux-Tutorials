@@ -8,16 +8,16 @@
 
 ## 加入套件源 ##
 
->若是使用HTTP或FTP的套件源，需要進入設定檔進行修改，設定檔路徑位於/etc/apt/sources.list以及/etc/apt/sources.list.d/底下，/etc/apt/sources.list.d/底下可創建多個
+若是使用HTTP或FTP的套件源，需要進入設定檔進行修改，設定檔路徑位於/etc/apt/sources.list以及/etc/apt/sources.list.d/底下，/etc/apt/sources.list.d/底下可創建多個
 
->Debian官方建議的注意事項
->/etc/apt/sources.list中不要包含testing或unstable 
->不要在設定檔中寫入非Debian的套件源，如Ubuntu
->不要建立/etc/apt/preferences
->不要使用dpkg -i <*.deb>安裝套件
->不要使用dpkg --force-all -i <*.deb>安裝套件
->不要刪除或修改/var/lib/dpkg中的文件
->不要讓使用原始碼安裝的套件覆蓋系統文件，若是需要，可安裝於/usr/local/和/opt中
+Debian官方建議的注意事項
+/etc/apt/sources.list中不要包含testing或unstable 
+不要在設定檔中寫入非Debian的套件源，如Ubuntu
+不要建立/etc/apt/preferences
+不要使用dpkg -i <*.deb>安裝套件
+不要使用dpkg --force-all -i <*.deb>安裝套件
+不要刪除或修改/var/lib/dpkg中的文件
+不要讓使用原始碼安裝的套件覆蓋系統文件，若是需要，可安裝於/usr/local/和/opt中
 
 ```bash
 #查看設定檔內容
