@@ -6,7 +6,7 @@
     
 >Debian提供了HTTP,FTP和CD-ROM/DVD來訪問套件源，也可使用PPA加入個人套件源，且擁有多種套件管理工具，下面將一一列出使用方法與範例
 
-## 加入HTTP,FTP套件源 ##
+## 加入套件源 ##
 
     若是使用HTTP或FTP的套件源，需要進入設定檔進行修改，設定檔路徑位於/etc/apt/sources.list以及/etc/apt/sources.list.d/底下，/etc/apt/sources.list.d/底下可創建多個
 
@@ -19,24 +19,59 @@
     不要刪除或修改/var/lib/dpkg中的文件
     不要讓使用原始碼安裝的套件覆蓋系統文件，若是需要，可安裝於/usr/local/和/opt中
 
+```bash
+#查看設定檔內容
+cat /etc/apt/source.list 
+#預設會看到類似以下的設定(依照實際為準)
+deb http://deb.debian.org/debian/ bullseye main contrib non-free
+deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
+#各個欄位的意思
+deb - 定義binary軟體包
+deb-src - 定義Source code軟體包
+#Repository URL
+套件庫路徑，可指定ftp、http
+#Distribution
+stable - Debian官方最近一次發行的套件，為官方正式發行版本，建議使用bullseye替代stable，避免下個版本釋出時出現錯誤
+unstable - Debian現行開發工作，較不穩定，通常適用於開發者 版本號為sid
+testing - 暫時未被收錄進stable的套件，但版本較新，版本號為bookworm
+#Component
+main - 遵從Debian自由軟體引導方針，並不依賴於non-free的套件
+contrib - 遵從Debian自由軟體引導方針，但依賴於non-free的套件
+non-free - 不遵從Debian自由軟體引導方針的套件
+###記得修改任何設定後先執行apt update在開始安裝套件，否則跳出找不到是正常的###
+```
 
 
-## 新增CD-ROM和第三方套件源方式 ##
+
+## 新增CD-ROM ##
 
 >在Linux中絕大部分的套件都來自於官方套件庫，但若是需要的套件不存在於官方套件庫，就需要使用到個人套件庫
 ```bash
-#新增CD-ROM/DVD套件源
-apt-cdrom add /media/cdrom0 #/media/cdrom0為掛載好的DVD
+#查看光碟位置，一般在/media底下
+ls /media/ #查看光碟掛載位置
+cat /etc/fstab #查看光碟掛載位置
+mount #查看掛載位置
+#將光碟加入source.list中，假如光碟在/media/cdrom0
+apt-cdrom add /media/cdrom0
+#查看是否成功加入
+cat /etc/apt/source.list
+#記得加入套件源後都必須更新套件源後才可使用
+apt update 
+```
+
+## 新增個人套件源 ##
+
+```bash
 #新增個人件源
 add-apt-repository ppa:<套件庫名稱>
-#記得以上加入套件源後都必須更新套件源後才可使用
+#記得加入套件源後都必須更新套件源後才可使用
 apt update  
 ```
 
 ## 移除第三方套件源 ##
 
 ```bash
-
+apt add-apt-repository --remove ppa:<套件庫名稱>
 ```
 
 ## 更新套件源與套件 ##
@@ -44,7 +79,6 @@ apt update
 ```bash
 apt update #更新套件來源而已，並不會更新套件
 apt upgrade #更新套件
-
 ```
 
 ## 安裝套件 ##
