@@ -1,8 +1,3 @@
-# 參數 #
-
-範例文字檔為以下
-
-```
 1.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium
 2.corrupti molestias, possimus non error ex cumque repudiandae voluptat
 3.ibus dolores necessitatibus. Hic eos fuga, voluptatibus libero nihil 
@@ -13,5 +8,3 @@
 8.edit porro? Corporis quae iure saepe laborum? Quas, excepturi! At dol
 9.orum,enim,molestiae,ducimus,corporis,sunt,delectus,distinctio,ipsa,n
 10ecessitatibus! Aspernatur earum libero sequi dicta unde numquam, erro
-
-```
