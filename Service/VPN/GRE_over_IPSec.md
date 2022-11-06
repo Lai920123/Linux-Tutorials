@@ -1,6 +1,6 @@
 # GRE over IPSec
 
-![Untitled](GRE%20over%20IPSec%206f7d48a98555451baee177c35e1536cb/Untitled.png)
+![Untitled](GRE_over_IPSec/Untitled.png)
 
 - 建立GRE Tunnel
     

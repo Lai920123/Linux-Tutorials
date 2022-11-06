@@ -20,7 +20,7 @@ date +%Y-%m-%d
 #輸出結果
 ```
 
-![Untitled](Time%20ae636f0341e84859aa136bc35c1f847e/Untitled.png)
+![Untitled](Time/Untitled.png)
 
 ### 更改時間
 
