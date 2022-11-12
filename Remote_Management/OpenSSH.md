@@ -243,3 +243,18 @@ Host Host1 #別名
     Port 22 #端口
     LocalForward 8080 192.168.1.1:80 #SSH Tunnel，命令行的話使用-L
 ```
+
+## Troubel Shooting ##
+
+### 使用ssh-add xxx時出現錯誤 ###
+
+出現以下錯誤原因是私鑰權限太過寬鬆，更改檔案權限即可
+
+![](OpenSSH/TroubleShooting1.png)
+
+```bash
+#預設公鑰權限
+chmod 644 xxx.pub
+#預設私鑰權限
+chmod 600 xxx
+```
