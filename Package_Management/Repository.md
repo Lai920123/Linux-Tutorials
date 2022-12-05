@@ -6,6 +6,14 @@ Repository(套件庫)是用來在安裝軟體時,會去查詢此套件庫,從此
 
 Debian套件管理工具為apt和dpkg
 
+## 套件源 ##
+
+此網址可查看各地區的套件源 
+
+Debian https://www.debian.org/mirror/list-full
+
+Ubuntu https://releases.ubuntu.com/?_ga=2.72142426.814573961.1660649336-1610269121.1660649336
+
 ### 套件庫設定檔
 
 ```bash
@@ -150,6 +158,10 @@ rpm -qa | grep
 #以將目錄下的檔案刪除或者使用以下指令
 dnf clean all
 ```
+
+## GPG Key Server ##
+
+https://keyserver.ubuntu.com/
 
 ## GPG Key管理
 
