@@ -2,7 +2,7 @@
 
 ## 編輯設定檔
 
-設定檔位於/etc/suoders，注意不要使用一般文字編輯器編輯此檔案，可能導致文件損壞，或拒絕管理員訪問，使用visudo編輯，也可將單獨檔案寫至/etc/sudoers.d，例如echo "user1 (ALL=ALL) NOPASSWD:ALL  /etc/sudoeers.d/user1
+設定檔位於/etc/suoders，注意不要使用一般文字編輯器編輯此檔案，可能導致文件損壞，或拒絕管理員訪問，使用visudo編輯，也可將單獨檔案寫至/etc/sudoers.d，例如echo "user1 (ALL=ALL) NOPASSWD:ALL >> /etc/sudoeers.d/user1
 
 ```bash
 #預設的別名，裡面包含了可使用的一些指令，可以使用別名給予sudo使用者使用指令的權限，也可以自訂別名
