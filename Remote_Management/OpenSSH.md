@@ -244,6 +244,16 @@ Host Host1 #別名
     LocalForward 8080 192.168.1.1:80 #SSH Tunnel，命令行的話使用-L
 ```
 
+## 遠端使用指令但不連入 ##
+
+>ssh還可以在不連線進入主機的狀態下遠端輸入指令
+
+```bash
+#例如:
+ssh user@123.123.123.123 'ip a' #查看ip
+ssh user@123.123.123.123 'cat /proc/cpuinfo' #查看系統資訊
+```
+
 ## Troubel Shooting ##
 
 ### 使用ssh-add xxx時出現錯誤 ###
