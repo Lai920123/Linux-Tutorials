@@ -9,8 +9,8 @@
 export 
 #加入路徑至環境變數PATH，修改時要注意$PATH一定要加，否則會清空原有的內容
 export PATH=$PATH:/home/user/test
-#刪除環境變數
-export TEST=Test
+#刪除環境變數，將加入那行取消並使用以下指令即可
+source ~/.bashrc
 #每次開啟shell時加入環境變數，將export寫入~/.bashrc即可
 vim ~/.bashrc
 export PATH=$PATH:/home/user/test
