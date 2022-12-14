@@ -137,6 +137,12 @@ mkfs -t ext4 /dev/sdb1
 mount /dev/sdb1 /home/user/ 
 ```
 
+## 查看檔案系統格式 ##
+
+```bash
+df -T
+```
+
 就可以將硬碟掛載到/home/user/內了
 
 ## 開機時自動掛載
