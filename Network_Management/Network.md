@@ -150,7 +150,6 @@ nmcli
 nmcli dev set vmnet2 managed yes
 #配置IP
 nmcli connection modify vmnet2 ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.254 ipv4.dns 8.8.8.8 ipv4.method manual
-
 ```
 
 ## CentOS
