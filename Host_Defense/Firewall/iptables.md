@@ -79,6 +79,12 @@ iptables -F
 iptables -t nat -F  
 #清除mangle的規則
 iptables -t mangle -F 
+#列出rule id
+iptables -L INPUT -n --line-numbers
+iptables -L -t nat -n --line-numbers
+#刪除特定ID的rule 
+iptables -D INPUT 1
+iptables -D -t nat PREROUTING 1
 ```
 
 ## 允許服務進入
