@@ -24,6 +24,9 @@ services:
       - "8800:80"
     networks: 
       - webserver 
+    volumes:
+      - ./
+      - ./
   srv1: 
     images: ""
     ports: 
