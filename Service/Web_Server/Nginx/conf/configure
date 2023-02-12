@@ -8,7 +8,6 @@
 --http-log-path=/usr/local/nginx/logs/access.log \ 
 --pid-path=/var/run/nginx.pid \ 
 --lock-path=/var/lock/subsys/nginx \
---with-openssl=/usr/local/openssl \ 
 --with-http_stub_status_module \
 --with-http_ssl_module \ 
 --with-http_gzip_static_module \ 
