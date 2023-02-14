@@ -1,28 +1,33 @@
 version: '3.7'
 services:
   dns_server:
-    images: "bind9"
+    image: "ubuntu/bind9"
     ports: 
-      - "53:53"
+      - "53053:53"
     networks:
-      - webserver 
+      webserver:
+        ipv4_address: 172.18.0.10 
     volumes:
-      - ./
+      - ./bind9/named.conf.local:/etc/bind/named.conf.local
+      - ./bind9/db.domain.com:/etc/bind/db.domain.com
+      - ./bind9/db.0.18.172:/etc/bind/db.0.18.172
   proxy_server:
     images: "nginx"
     ports: 
       - "8800:80"
     networks: 
-      - webserver 
+      webserver:
+        ipv4_address: 172.18.0.2 
     volumes:
-      - ./proxy_server/conf.d/reverse_proxy.conf:/etc/nginx/conf.d/reverse_proxy.conf
+      - ./proxy_server/conf.d:/etc/nginx/conf.d
       - ./proxy_server/html:/usr/share/nginx/html
   srv1: 
     images: "nginx"
     ports: 
       - "8801:80"
     networks:
-      - webserver 
+      webserver:
+        ipv4_address: 172.18.0.100
     volumes:
       - ./srv1/html:/usr/share/nginx/html
   srv2:
@@ -30,7 +35,8 @@ services:
     ports:
       - "8802:80"
     networks:
-      - webserver
+      webserver:
+        ipv4_address: 172.18.0.101
     volumes:
       - ./srv2/html:/usr/share/nginx/html
   srv3:
@@ -38,7 +44,8 @@ services:
     ports:
       - "8803:80"
     networks:
-      - webserver
+      webserver:
+        ipv4_address: 172.18.0.102
     volumes:
       - ./srv3/html:/usr/share/nginx/html
 networks: #要使用自訂網路需先定義一個與services同級的networks 

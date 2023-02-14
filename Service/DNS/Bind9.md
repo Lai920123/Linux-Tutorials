@@ -54,7 +54,7 @@ apt -y install bind9 dnsutils #dnsutils不一定要安裝，測試用
     #域名反解
     zone "1.1.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/db.1.168.192"
+        file "/etc/bind/db.1.168.192";
     };
     ```
     
