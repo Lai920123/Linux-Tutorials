@@ -49,7 +49,7 @@ apt -y install bind9 dnsutils #dnsutils不一定要安裝，測試用
     #域名正解
     zone "it29.local" {
         type master; #主要區域
-        file "/etc/bind/db.local";  
+        file "/etc/bind/db.it29.local";  
     };
     #域名反解
     zone "1.1.192.in-addr.arpa" {
