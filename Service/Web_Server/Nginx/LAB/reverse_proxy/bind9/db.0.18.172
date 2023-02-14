@@ -1,0 +1,16 @@
+;
+; BIND reverse data file for domain.com 
+;
+
+$TTL 604800 
+@     IN  SOA     ns1.domain.com. root.domain.com. (
+                            2        ; Serial 
+                       604800        ; Refresh 
+                        86400        ; Retry 
+                      2419200        ; Expire 
+                       604800 )      ; Negeative Cache TTL 
+;
+      IN  NS      ns1.domain.com.
+10    IN  PTR     ns1.domain.com.
+1     IN  PTR     www.domain.com.
+
