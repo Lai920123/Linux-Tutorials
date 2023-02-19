@@ -20,11 +20,29 @@ echo “P@ssw0rd” | passwd –stdin user001
 echo “user:P@ssw0rd” | chpasswd
 ```
 
-## 大量更改使用者密碼 ##
+## 大量新增使用者&設定預設密碼 ## 
 
-依照上面表格給予預設相同密碼,之後再讓使用者更改 先將/etc/shadow產生的密碼回寫到/etc/passwd pwunconv
+在一個公司裡總是會有許多使用者的問題,創建時不可能一個一個創,所以就需要批次建立的方法 假設要建立IT01~50 
 
-大量新增使用者,密碼 在一個公司裡總是會有許多使用者的問題,創建時不可能一個一個創,所以就需要批次建立的方法 假設要建立IT01~50 echo -e IT0{1..9}“” >> username echo -e IT{10..50} >> username echo -e 代表可以使用特殊字元 發出警告聲
+```bash
+#! /bin/bash
+for i in {1..100}
+do 
+    adduser --disabled-password --gecos "" user$i #--disabled-password為跳過詢問密碼，--gecos為跳過填寫基本信息(姓名,電話等...)
+    echo "user$i:P@ssw0rd" | chpasswd 
+    chage -d 0 user$i #下次登入修改密碼
+done 
+```
+
+## 完整刪除使用者和使用者家目錄 ##
+
+```bash
+#! /bin/bash 
+for i in {1..100}
+do 
+    userdel --remove user$i
+done 
+```
 
 /sbin/nologin:只不允許系統login，其他服務還是可以登入
 
