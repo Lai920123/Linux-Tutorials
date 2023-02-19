@@ -17,7 +17,7 @@ passwd  user
 #也可以直接以資料流導入
 echo “P@ssw0rd” | passwd –stdin user001 
 #若上面那種不行,可以試試看下面這個 
-echo “P@ssw0rd” | chpasswd
+echo “user:P@ssw0rd” | chpasswd
 ```
 
 ## 大量更改使用者密碼 ##
