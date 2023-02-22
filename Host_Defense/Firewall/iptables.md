@@ -127,7 +127,7 @@ iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
 ### Port Forward
 
 ```
-iptables -t nat -A PREROUTING -i ens33 -p tcp –dport 22 -j DNAT –to-destination 192.168.1.1:22
+iptables -t nat -A PREROUTING -i ens33 -p tcp –-dport 22 -j DNAT –-to-destination 192.168.1.1:22
 ```
 
 ### 特殊用法
@@ -135,7 +135,7 @@ iptables -t nat -A PREROUTING -i ens33 -p tcp –dport 22 -j DNAT –to-destinat
 在本機進行port轉換,用戶端使用22 Port但進到本機後會導向8888 Port
 
 ```
-iptables -t nat -A PREROUTING -p tcp –dport 22 -j REDIRECT –to-ports 8888
+iptables -t nat -A PREROUTING -p tcp –-dport 22 -j REDIRECT --to-ports 8888
 ```
 
 ## 禁止icmp
