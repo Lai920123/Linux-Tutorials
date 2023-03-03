@@ -144,6 +144,7 @@ apt -y install bind9 dnsutils #dnsutils不一定要安裝，測試用
                        604800 )       ; Negative Cache TTL #這個紀錄的存留時間(秒)
     ;
           86400   IN    NS    ns1.example.com.
+    @     86400   IN    A     192.168.1.1 #@代表域名，加上這行才可以查詢到example.com這個域名
     ns1   86400   IN    A     192.168.1.1
     ns2   86400   IN    A     192.168.1.2
     www   0       IN    A     192.168.1.1
