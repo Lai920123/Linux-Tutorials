@@ -180,23 +180,23 @@
         
         打開瀏覽器，輸入https://server3.lai.com/certsrv(申請憑證的網址，實際的跟這裡不同)，點選Request a certificate
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled.png)
+        ![Untitled](Nginx1/Untitled.png)
         
         Advanced certificate request
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled%201.png)
+        ![Untitled](Nginx1/Untitled%201.png)
         
         貼上剛剛生成的請求檔，Certificate Template選擇Web Server，接著按Submit
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled%202.png)
+        ![Untitled](Nginx1/Untitled%202.png)
         
         等待CA頒發憑證，等頒發後回到此頁面並點選View the status of a pending certificate request
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled.png)
+        ![Untitled](Nginx1/Untitled.png)
         
         下載憑證
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled%203.png)
+        ![Untitled](Nginx1/Untitled%203.png)
         
         ### 憑證格式轉換
         
@@ -237,7 +237,7 @@
         2. 負載平衡：
     - 單台伺服器反向代理
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled%204.png)
+        ![Untitled](Nginx1/Untitled%204.png)
         
         ### Proxy Server
         
@@ -275,7 +275,7 @@
         
         多台反向代理可以只使用一個外部IP，並利用server_name的方式轉發到背後的Web Server上，雖然只使用一個外部IP，不過記得還是要申請多個域名才可使用
         
-        ![Untitled](Nginx%20d7f5c7fc40134c1dbd202ace2ecf7055/Untitled%205.png)
+        ![Untitled](Nginx1/Untitled%205.png)
         
         ### Proxy Server
         
