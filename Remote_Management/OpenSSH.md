@@ -21,6 +21,12 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 vim /etc/ssh/sshd_config
 #以下內容依實際需要更改
 ```
+
+## 檔案說明 ##
+
+```bash
+known_hosts #用戶端使用此文件驗證伺服器的身分，當連結到新的伺服器時會將伺服器的公鑰儲存至known_hosts，在下次連線時自動驗證
+```
     
 ## 服務管理 ##
     
