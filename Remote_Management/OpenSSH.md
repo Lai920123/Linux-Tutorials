@@ -57,7 +57,7 @@ ssh-keygen -m PEM -t rsa -b 4096 -N Test
 #將公鑰上傳到Server中要登入使用者的家目錄底下，範例為user
 #可使用scp,tftp,或者直接複製過去也可以
 scp id_rsa.pub user@192.168.1.100:/home/user/.ssh/authorized_keys
-#或使用ssh-copy-id，使用ssh-copy-id登入要連線的主機
+#或使用ssh-copy-id(Linux)，使用ssh-copy-id登入要連線的主機
 ssh-copy-id user@192.168.1.100
 #下次登入就不需要密碼了
 ```
