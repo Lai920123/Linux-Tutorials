@@ -97,11 +97,11 @@ logging {
 
 ```
 
-### named.conf.default-zones
+### named.conf.default-zones ##
 
 此設定檔記錄了root Server、localhost的zone
 
-## Zone file
+## zone file ##
 
 設定檔：/etc/bind/db.local，假設要加入以下Resource Record，www.it29.local做load balance
 
@@ -126,7 +126,7 @@ vim /etc/bind/db.it29.local
 $TTL 604800 #最小存留時間(秒)
                   #主要伺服器      #負責人
 @    IN    SOA    ns1.it29.local. root.it29.local. (
-                        2         ; Serial #版本，當zone file變動時管理員要自行增加號碼，slave會進行比對和決定是否要進行zone transfer
+                        2         ; Serial #版本，當zone file變動時管理員要自行增加號碼，用於通知slave進行zone transfer，不過不會進行zone transfer，還是會依照refresh時間進行zone transfer
                    604800         ; Refresh #重整間隔(秒)，Slave詢問Primary更新區域的重整間隔
                     86400         ; Retry  #重試間隔(秒)，每隔多少秒再試一次
                   2419200         ; Expire #到期時間(秒)，直到到期，Slave的區域會停止回答
@@ -142,7 +142,7 @@ www   0       IN    A     192.168.1.1
 mail  86400   IN    A     192.168.1.2
 ```
 
-### 反向對應區域
+## 反向對應區域 ##
 
 ```python
 ;
@@ -205,4 +205,10 @@ controls {
         allow { 127.0.0.1; } keys { "rndc-key"; };
 };
 
+```
+
+## 檢查配置文件是否錯誤 ##
+
+```bash
+named-checkconf /etc/bind/named.conf.local
 ```
