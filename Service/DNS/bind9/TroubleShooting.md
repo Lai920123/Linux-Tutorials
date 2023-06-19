@@ -5,7 +5,7 @@ dumping master file: /etc/bind/tmp-nIOVHD85JX: open: permission denied
 此錯誤代表已成功進行zone transfer，但無法寫入區域文件，因沒有目錄的權限，解決辦法為以下
 
 ```bash
-#因安全問題，在Debian建議將named.conf.local的file路徑更改為/var/lib/bind
+#因安全問題，，不建議直接修改/etc/bind的權限，在Debian建議將named.conf.local的file路徑更改為/var/lib/bind
 zone "example.com" {
     type slave;
     file "/var/lib/bind/db.example.com";
