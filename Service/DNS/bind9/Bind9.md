@@ -159,12 +159,10 @@ $TTL    604800
       IN   NS    ns1.example.com.
 1     IN   PTR   ns1.example.com.
 2     IN   PTR   ns2.example.com.
-
 ```
 
 
-ndc
-方法
+## rndc ##
 
 rndc是一個管理bind的工具，對DNS Server進行關閉、重載、清除快取、增加以及刪除Zone等操作，還可以再不關閉DNS Server的情況下更新變更後的數據，使用TCP 953
 
