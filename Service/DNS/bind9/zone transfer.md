@@ -26,7 +26,7 @@ zone "1.168.192.in-addr.arpa" {
 };
 ```
 
-Slave
+## Slave ##
     
 ```python
 #使用vim編輯
