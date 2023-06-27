@@ -1,5 +1,10 @@
 # Wireguard #
 
+## 安裝Wireguard ##
+
+```bash
+apt -y install wireguard
+```
 
 ## Topology ## 
 
