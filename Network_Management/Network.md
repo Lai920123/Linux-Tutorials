@@ -97,11 +97,25 @@ network:
   renderer: networkd #使用networkd這個deamon 
   ethernets:       
     ens33: 
-  addresses: [ 192.168.1.100/24 ] #IP位置和遮罩 
-  gateway4: 192.168.1.254 
-  nameservers: 
-  search: [ www.lai.com ] 
-  addresses: [ 8.8.8.8 168.95.1.1 ]
+      addresses: [ 192.168.1.100/24 ] #IP位置和遮罩 
+      #gateway4: 192.168.1.254 gateway4已停用，改使用routes的方式撰寫
+      nameservers: 
+      search: [ www.lai.com ] 
+      addresses: [ 8.8.8.8 168.95.1.1 ]
+      routes: 
+      - to: default
+        via: 123.0.1.1
+```
+
+### TroubleShooting ###
+
+錯誤信息
+
+出現此錯誤的原因為設定檔權限過於寬鬆，建議將權限改為600，擁有者和群組為root
+ 
+```
+** (generate:40134): WARNING **: 09:28:29.011: Permissions for /etc/netplan/00-installer-config.yaml are too open. Netplan configuration should NOT be accessible by others.
+** (generate:40134): WARNING **: 09:28:29.011: Permissions for /etc/netplan/01-network-manager-all.yaml are too open. Netplan configuration should NOT be accessible by others.
 ```
 
 ### 檢查配置
