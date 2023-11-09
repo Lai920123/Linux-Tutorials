@@ -90,10 +90,10 @@ iptables -D -t nat PREROUTING 1
 ## 允許服務進入
 
 ```bash
-iptables -A INPUT -p tcp –dport 22 -j ACCEPT #ssh 
-iptables -A INPUT -p tcp –dport 23 -j ACCEPT #telnet 
-iptables -A INPUT -p tcp –dport 53 -j ACCEPT #用在dns zone transfer,若只是要查詢不需要tcp 53 port 
-iptables -A INPUT -p udp –dport 53 -j ACCEPT #DNS查詢 其他的就依照開啟的服務帶入以上就可以了
+iptables -A INPUT -p tcp –-dport 22 -j ACCEPT #ssh 
+iptables -A INPUT -p tcp –-dport 23 -j ACCEPT #telnet 
+iptables -A INPUT -p tcp –-dport 53 -j ACCEPT #用在dns zone transfer,若只是要查詢不需要tcp 53 port 
+iptables -A INPUT -p udp –-dport 53 -j ACCEPT #DNS查詢 其他的就依照開啟的服務帶入以上就可以了
 ```
 
 ## 允許來源進入
