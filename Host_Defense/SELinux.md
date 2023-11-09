@@ -13,11 +13,13 @@ Disabled #關閉SELinux
 ## 切換SELinux模式
 
 ```bash
-#臨時切換模式,關機就消失，此方法無法設定為disabled
+#1.臨時切換模式,關機就消失，此方法無法設定為disabled
 setenforce [ Enforcing or 1 | Permissive or 0 ] 
-#或者是直接修改設定檔 
+#2.或者是直接修改設定檔 
 vim /etc/selinux/config 
 將SELINUX=[enforcing | permissive | disabled ]
+#3.不須使用文字編輯器的修改方法
+sed -i 's/SELINUX=permissive/SELINUX=enforcing/g' /etc/selinux/config
 ```
 
 ## 查看目前所在哪種模式
