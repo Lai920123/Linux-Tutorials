@@ -67,7 +67,18 @@ scp id_rsa.pub user@192.168.1.100:/home/user/.ssh/authorized_keys
 ssh-copy-id user@192.168.1.100
 #下次登入就不需要密碼了
 ```
-    
+
+## 檢視SSH金鑰是否有密碼 ##
+
+假設今天在/homoe/user/.ssh/目錄下有多個金鑰，想要檢視這些金鑰是否有密碼，可以使用以下指令
+
+```bash
+#沒密碼的話會顯示私鑰內容
+ssh-keygen -y -P '' -f /home/user/.ssh/no-pass #-P為密碼，所以''為空密碼
+#有密碼的話會顯示Load key "with-pass": incorrect passphrase supplied to decrypt private key
+ssh-keygen -y -P '' -f /home/user/.ssh/with-pass
+```
+
 ## SSH_Tunnel ##
     
     SSH Tunnel有三種方式 
@@ -101,6 +112,7 @@ ssh-copy-id user@192.168.1.100
     ### Dynamic Port Forwarding
     
 ## SSH防護 ##
+
 ## SSH使用2FA ##
         
 ### 安裝套件 ###
