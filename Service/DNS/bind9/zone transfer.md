@@ -49,3 +49,7 @@ zone "1.168.192.rev" {
 #因效能考量，Slave的Zone file會以binary的方式儲存，所以打開會是亂碼，若要變更為文字格式，請在/etc/bind/named.conf.options的options內加入以下這行
 masterfile-format text;
 ```
+
+## Trouble Shooting ##
+
+https://blog.miniasp.com/post/2011/01/10/How-to-setup-Slave-DNS-correctly-using-Ubuntu-1004-LTS
