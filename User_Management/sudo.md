@@ -41,6 +41,15 @@ Host_List:應用於已知的主機列表，可填入主機名或IP，ALL代表�
 Cmd_List:使用者可以使用哪些指令
 ```
 
+## 編輯/etc/sudoers ##
+
+需使用visudo編輯設定檔
+
+```bash
+#加入以下
+%wheel ALL=(ALL) PASSWD:ALL #使用者獲得sudo權限，需輸入密碼
+%wheel ALL=(ALL) NOPASSWD:ALL #使用者獲得sudo權限，免輸入密碼
+```
 ### 加入群組
 
 預設wheel群組的成員都可使用root身份執行所有sudo指令
