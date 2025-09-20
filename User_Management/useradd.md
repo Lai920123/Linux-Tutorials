@@ -34,6 +34,18 @@ do
 done 
 ```
 
+## 所有使用者加上sudo ##
+
+```bash
+#! /bin/bash
+for i in {1..100}
+do 
+    adduser --disabled-password --gecos "" user$i sudo
+    echo "user$i:P@ssw0rd" | chpasswd 
+    chage -d 0 user$i #下次登入修改密碼
+done 
+```
+
 ## 完整刪除使用者和使用者家目錄 ##
 
 ```bash
